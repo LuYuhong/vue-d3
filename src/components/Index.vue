@@ -37,7 +37,7 @@ export default {
 .root {
 	width: 100%;
 	height: 1000px;
-	background-color: bisque;
+	/* background-color: bisque; */
 	text-align: center;
 }
 

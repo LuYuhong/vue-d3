@@ -49,7 +49,7 @@ export default {
 .topheader{
 	width: 100%;
 	height: 950px;
-	background-color:darkgoldenrod;
+	/* background-color:darkgoldenrod; */
 }
 .body{
 	margin: 0;
