@@ -1,9 +1,9 @@
 <template>
 	<div class = "topheader">
-        <ul @click="changeShowPageType(1)">1</ul>
-        <ul @click="changeShowPageType(2)">2</ul>
-        <ul @click="changeShowPageType(3)">3</ul>
-        <ul @click="changeShowPageType(4)">4</ul>
+        <ul id="leftUl1" @click="changeShowPageType(1)">1</ul>
+        <ul id="leftUl2" @click="changeShowPageType(2)">2</ul>
+        <ul id="leftUl3" @click="changeShowPageType(3)">3</ul>
+        <ul id="leftUl4" @click="changeShowPageType(4)">4</ul>
 	</div>
   
 </template>
@@ -15,7 +15,7 @@ import eventBus from '@/eventBus.js'
 
 
 export default {
-    type: 2,
+    type: 1,
     data () {
         return {
             msg: 'header-------------------',
@@ -24,9 +24,32 @@ export default {
     },
     methods: {
         changeShowPageType(message){
-            eventBus.$emit('changeShowPageType', message);
-            console.log(this.type);
+            this.type = message;
+            eventBus.$emit('changeShowPageType', this.type);
+            for(var i = 1; i <= 4; i++){
+                var element = document.getElementById("leftUl" + i);
+                if(this.type == i){
+                    element.className = 'ulSelect';
+                }else{
+                    element.className = 'ulNotSelect';
+                }
+            }
         }
+    },
+    mounted(){
+        for(var i = 1; i <= 4; i++){
+            if(i == 1){
+                var element = document.getElementById("leftUl1");
+                element.className = 'ulSelect';
+            }else{
+                var element = document.getElementById("leftUl" + i);
+                element.className = 'ulNotSelect';
+            }
+        }
+    },
+    created(){
+       
+        
     }
 }
 </script>
@@ -40,7 +63,25 @@ export default {
     float: left;
 }
 
-.topheader ul{
+.ulNotSelect{
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    background-color:sandybrown;
+    padding-inline-start: 0;
+    margin-block-start:0;
+    margin-block-end:0;
+    line-height: 50px;
+    display: table;
+    margin: 0 auto;
+
+    border-color:#000;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.ulSelect{
     width: 100%;
     height: 50px;
     font-size: 20px;
@@ -56,7 +97,6 @@ export default {
     border-color:#000;
     border-width: 2px;
     border-style: solid;
-    
 }
 .body{
 	margin: 0;

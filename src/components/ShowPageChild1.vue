@@ -33,9 +33,9 @@ export default {
             .attr("fill", "red")
             .style("border", "1px dashed #ccc");
 
-            console.log('svg', svg._groups[0][0])
-            console.log('select', d3.select("body div.ShowPageChild1"))
-            console.log('force', d3.event)
+            //console.log('svg', svg._groups[0][0])
+            //console.log('select', d3.select("body div.ShowPageChild1"))
+            //console.log('force', d3.event)
 
             var force = d3.forceSimulation(this.nodes)
             .force("charge", d3.forceManyBody())
@@ -103,11 +103,11 @@ export default {
 	},
     mounted() {
         //在 body 里添加一个 SVG 画布   
-        console.log("ttt")
+        //console.log("ttt")
         
         this.draw();
         
-        console.log("end");
+        //console.log("end");
   },
 };
 </script>

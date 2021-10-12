@@ -37,7 +37,7 @@ export default {
 	},
 	created(){
 		eventBus.$on('changeShowPageType', message =>{
-			console.log("message = ", message);
+			//console.log("message = ", message);
 			this.type = message;
 		})
 	}

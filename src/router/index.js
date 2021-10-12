@@ -40,6 +40,6 @@ export default new Router({
       path: '/',
       name: 'ShowPageChild2',
       component: ShowPageChild2
-    },
+    }
   ]
 })

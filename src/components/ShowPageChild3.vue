@@ -12,10 +12,14 @@ export default {
         }
 	},
   	methods:{
-		
+		start(){
+			var arr = [1,2,3];
+			arr.toString();
+			console.log(arr);
+		}
 	},
 	created(){
-	
+		this.start();
 	}
 }
 </script>
